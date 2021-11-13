@@ -1,3 +1,4 @@
+import cors from '@koa/cors';
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import './shared/websocket/server';
@@ -7,6 +8,7 @@ require('dotenv').config();
 
 const app = new Koa();
 
+app.use(cors());
 app.use(bodyParser());
 app.use(routes.routes());
 app.use(routes.allowedMethods());

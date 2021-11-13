@@ -19,3 +19,5 @@ webSocketServer.on('new-move', (data) => {
     }
   });
 });
+
+console.log('Websocket Server listening at port ', WEBSOCKET_PORT);
