@@ -1,6 +1,6 @@
 # Server
 
-This is an http server implementation powered by Koa + Knex. The http API allows to save chess games and list games from the database. To persist data, a postgres database is being used.
+This is an http server implementation powered by Koa + Knex and also a websocket server implementation using `ws`. The http API allows to save chess games and list games from the database. To persist data, a postgres database is being used. The websocket endpoint allows clients to receive live information about updates on games currently being played.
 
 ## Project pre-requisites
 
@@ -89,3 +89,7 @@ Response body looks like this:
   "lastMove": "e5"
 }
 ```
+
+## Websocket endpoint
+
+The websocket server can be accessed on root path and port 8080 by default. Anytime a game is upserted in the database, the websocket server will broadcast its data to all connected clients.
